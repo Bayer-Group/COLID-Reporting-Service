@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>COLID.ReportingService.WebApi</RootNamespace>
+	<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <AssemblyName>COLID.ReportingService.WebApi</AssemblyName>
+    <UserSecretsId>040cc890-0daf-475a-8660-239bd9714cbe</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\COLID.ReportingService.Common\Common.csproj" />
+    <ProjectReference Include="..\COLID.ReportingService.References\References.csproj" />
+    <ProjectReference Include="..\COLID.ReportingService.Repositories\Repositories.csproj" />
+    <ProjectReference Include="..\COLID.ReportingService.Services\Services.csproj" />
+  </ItemGroup>
+
+
+</Project>

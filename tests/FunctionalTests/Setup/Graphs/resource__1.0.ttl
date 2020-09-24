@@ -1,0 +1,623 @@
+﻿# Resource ID1002
+<https://pid.bayer.com/kos/19050#d8d8f921-cf1d-43d8-af0e-581a32a43def> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#7a492679-e2a4-4d43-a330-ab34b6131a42> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID1002"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:09.669Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI1010> ;
+                                                                       <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID1002" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:31.160Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/isDerivedFromDataset> <https://pid.bayer.com/kos/19050#fff23414-1b9c-446a-9bbd-28271ba33899> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "tim.odenthal.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasHistoricVersion> <https://pid.bayer.com/kos/19050#b2461db8-7280-4224-b7e5-678ef67e0c6a> .
+                                                                      
+<https://pid.bayer.com/URI1010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#7a492679-e2a4-4d43-a330-ab34b6131a42> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID1012"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI1020> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "http://ID1012"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI1020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+
+# Resource ID5002
+<https://pid.bayer.com/kos/19050#fff23414-1b9c-446a-9bbd-28271ba33899> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#d3849e89-3efe-43b8-abaa-7fc4205e694e> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5002"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5002> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5002" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "simon.lansing.ext@bayer.com@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasHistoricVersion> <https://pid.bayer.com/kos/19050#d9da2707-124d-4fca-a37b-c36bb25008cf> .
+                                                                      
+<https://pid.bayer.com/URI5002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#d3849e89-3efe-43b8-abaa-7fc4205e694e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5021"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5020> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "http://ID5021"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+
+# Resource ID5003
+<https://pid.bayer.com/kos/19050#fff23414-1b9c-446a-9bbd-28271ba57129> <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5003"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5003> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5003" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+# Resource ID5004
+<https://pid.bayer.com/kos/19050#fff23414-1b9c-446a-9bbd-28271ba58754> <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5004"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5004> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5005> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5004" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5006
+<https://pid.bayer.com/kos/19050#c4cd4d16-07d3-4fd0-a496-39093978e4d3> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#4aed5942-f7fa-4483-aa34-67bd199b3ca7> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5006"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5006> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5006" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#4aed5942-f7fa-4483-aa34-67bd199b3ca7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5007"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5007> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5007> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5008
+<https://pid.bayer.com/kos/19050#55e167db-28a0-4920-b621-9f0e4ac13df8> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#823e9fe1-b51c-478a-b35f-d2e3290b2675> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5008"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "tim.odenthal.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5008> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5009> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5006" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5009> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#823e9fe1-b51c-478a-b35f-d2e3290b2675> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5010"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5010> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5011
+<https://pid.bayer.com/kos/19050#218b3811-6684-4cbc-a15e-82674e0db8a3> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#58398a06-5b69-416a-90c4-e2eaf28a810c> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5011"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5011> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5011" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#58398a06-5b69-416a-90c4-e2eaf28a810c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5012"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5012> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5013
+<https://pid.bayer.com/kos/19050#7ecfadde-7d12-4628-8fd6-4ba8397799bf> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#fc175215-ca79-4031-b3b6-13d30059c44c> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5013"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5013> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5014> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5013" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5014> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#fc175215-ca79-4031-b3b6-13d30059c44c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5015"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5015> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5016
+<https://pid.bayer.com/kos/19050#c7af7d0e-0870-4868-a43d-413f641095a8> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#939e4a29-d527-46f2-b521-5e89bacbf673> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5016"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5016> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://www.google.de/5016> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5016" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+
+<https://pid.bayer.com/URI5016> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://www.google.de/5016> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#939e4a29-d527-46f2-b521-5e89bacbf673> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5017"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5017> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+# Resource ID5018
+<https://pid.bayer.com/kos/19050#a11277b8-a414-4817-bdd5-c22b406b7b77> <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#c9f9c2f3-fbb5-47dc-b24e-5be808ba6769> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5018"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5018> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://www.bayer.com/5018> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5016" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://www.bayer.com/5018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#c9f9c2f3-fbb5-47dc-b24e-5be808ba6769> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5019"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5019> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+#Tests with main endpoint
+
+# Resource ID5020-2 -> 5020 used in historic test
+<https://pid.bayer.com/kos/19050#3738500d-3043-4a8e-8752-ea4c4003af27> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#c52a516e-7aaf-44a4-b3c1-e72ef14d1d77> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5020"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "tim.odenthal.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5020-2> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5020" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5020-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#c52a516e-7aaf-44a4-b3c1-e72ef14d1d77> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5021"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5021> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasContactPerson> "marcus.davies@bayer.com";
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5021> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5022
+<https://pid.bayer.com/kos/19050#ecda9a66-fed8-4faa-87ab-db12053ebf53> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#066ef8b3-0be3-4f3b-ac7d-63cc8f1a40ba> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5022"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5022> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5023> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5022" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5022> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5023> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#066ef8b3-0be3-4f3b-ac7d-63cc8f1a40ba> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5024"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5024> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5024> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5025
+<https://pid.bayer.com/kos/19050#d62e63ab-47b8-456a-8876-a22e00b0466e> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#722763b6-8667-42ff-b789-f41228f6905b> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5025"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5025> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5025" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://pid.bayer.com/kos/19050/GenericDataset> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#722763b6-8667-42ff-b789-f41228f6905b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5026"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5026> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5026> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5027
+<https://pid.bayer.com/kos/19050#6ad2dcdd-f754-459e-8f0f-c65e2cb091ae> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#ce0695ff-8876-49b7-a400-a7c0861d00cd> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5027"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5027> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5028> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5027" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5028> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#ce0695ff-8876-49b7-a400-a7c0861d00cd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5029"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5029> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5029> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5030
+<https://pid.bayer.com/kos/19050#8c9bb1e1-778d-45ae-a4ad-7593355396b0> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#d3d70011-3581-4b01-b289-62de414e5a0a> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5030"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5030> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://www.google.de/5030> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5030" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://www.google.de/5030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#d3d70011-3581-4b01-b289-62de414e5a0a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5031"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5031> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com/5031"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5031> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+# Resource ID5032
+<https://pid.bayer.com/kos/19050#125abab8-8c5b-4122-841a-c72ebd52d4ff> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#39d8ee11-3fd3-4b8d-96d9-ac54bc49f8e4> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5032"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5032> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://www.bayer.com/5032> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5032" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#39d8ee11-3fd3-4b8d-96d9-ac54bc49f8e4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5033"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5033> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "invalid url"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://www.bayer.com/5032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+# Resource ID5040
+<https://pid.bayer.com/kos/19050#43e60ef1-f7f1-4843-a29a-df7e312d54f8> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#7ca657b2-9d7d-42e9-a30e-505dbcdc91ca> ;
+                                                                        <https://pid.bayer.com/kos/19050/distribution> <https://pid.bayer.com/kos/19050#705f2f9e-a957-4cd1-870f-9f7a331aee10> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5040"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5040> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5041> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5040" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5040> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5041> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#7ca657b2-9d7d-42e9-a30e-505dbcdc91ca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5042"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5042> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com/5042"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5042> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#705f2f9e-a957-4cd1-870f-9f7a331aee10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5043"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5043> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com/5043"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5042> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+# Versioning test cases
+
+## Resource ID5034
+<https://pid.bayer.com/kos/19050#4b9f582b-043c-4a03-b7ef-415249650634> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#9c83827c-a3c6-45e3-97da-6cc22582b596> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5034"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5034> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5035> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "1" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5034" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLaterVersion> <https://pid.bayer.com/kos/19050#073e453c-3273-4b9d-bc73-6ff46b9980ae> .
+                                                                      
+<https://pid.bayer.com/URI5034> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5035> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#9c83827c-a3c6-45e3-97da-6cc22582b596> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5036"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5036> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com/5036"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5036> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+
+## Resource ID5037
+
+<https://pid.bayer.com/kos/19050#073e453c-3273-4b9d-bc73-6ff46b9980ae> <https://pid.bayer.com/kos/19050/mainDistribution> <https://pid.bayer.com/kos/19050#173e8e40-fd3f-40dc-af2b-3b426239e376> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID5037"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5037> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/URI5038> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID5037" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c> .
+                                                                      
+<https://pid.bayer.com/URI5037> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/URI5038> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+<https://pid.bayer.com/kos/19050#173e8e40-fd3f-40dc-af2b-3b426239e376> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/BrowsableResource> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasNetworkedResourceLabel> "ID5039"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/URI5039> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasNetworkAddress> "https://www.bayer.com/5039"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasDistributionEndpointLifecycleStatus> <https://pid.bayer.com/kos/19050/active> .
+
+<https://pid.bayer.com/URI5039> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+
+## Resource ID6000
+
+<https://pid.bayer.com/kos/19050#30a7853d-b3d8-4970-96a2-3c30d103e670> <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID6000"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399902918f> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399902918f> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID6000" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#695533d3-391f-4249-81f9-f1674d1ea9dc> .
+                                                                       
+<https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399902918f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399902918f> <https://pid.bayer.com/kos/19050/hasUriTemplate> <https://pid.bayer.com/kos/19050#14d9eeb8-d85d-446d-9703-3a0f43482f5a>.
+
+<https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399902918f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399902918f> <https://pid.bayer.com/kos/19050/hasUriTemplate> <https://pid.bayer.com/kos/19050#bbcacfb7-f7c3-4b71-a509-d020ad703e83>.
+
+## Resource ID6001
+
+<https://pid.bayer.com/kos/19050#30a7853d-b3d8-4970-96a2-3c30d103e456> <https://pid.bayer.com/kos/19050/hasResourceDefinition> "ID6001"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLifecycleStatus> <https://pid.bayer.com/kos/19050/released> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasInformationClassification> <https://pid.bayer.com/kos/19050/Open> ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeUser> "christian.kaubisch.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050/dateCreated> "2019-12-19T14:24:03.620Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://pid.bayer.com/kos/19014/hasPID> <https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399904579f> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasBaseURI> <https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399904512f> ;
+                                                                       <https://pid.bayer.com/kos/19050/isPersonalData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                        <https://pid.bayer.com/kos/19050/containsLicensedData> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasVersion> "2" ;
+                                                                       <https://pid.bayer.com/kos/19050/hasEntryLifecycleStatus> <https://pid.bayer.com/kos/19050/published> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLabel> "ID6000" ;
+                                                                       <https://pid.bayer.com/kos/19050/lastChangeDateTime> "2019-12-19T14:24:36.316Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/Ontology> ;
+                                                                       <https://pid.bayer.com/kos/19050/author> "simon.lansing.ext@bayer.com" ;
+                                                                       <https://pid.bayer.com/kos/19050#hasConsumerGroup> <https://pid.bayer.com/kos/19050#695533d3-391f-4249-81f9-f1674d1ea9dc> ;
+                                                                       <https://pid.bayer.com/kos/19050/hasLaterVersion> <https://pid.bayer.com/kos/19050#30a7853d-b3d8-4970-96a2-3c30d103e670> .
+
+<https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399904579f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/no-cg-reference-used-by-identifier/8c2bd5ca-b784-46f7-a964-46399904579f> <https://pid.bayer.com/kos/19050/hasUriTemplate> <https://pid.bayer.com/kos/19050#14d9eeb8-d85d-446d-9703-3a0f43482f5a>.
+
+<https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399904512f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pid.bayer.com/kos/19014/PermanentIdentifier> .
+<https://pid.bayer.com/deprecated/8c2bd5ca-b784-46f7-a964-46399904512f> <https://pid.bayer.com/kos/19050/hasUriTemplate> <https://pid.bayer.com/kos/19050#bbcacfb7-f7c3-4b71-a509-d020ad703e83>.
+
+

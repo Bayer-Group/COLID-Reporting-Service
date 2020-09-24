@@ -1,0 +1,14 @@
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050#ExtendedUriTemplate> .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050#ExtendedUriTemplate> .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<http://www.w3.org/2000/01/rdf-schema#label>	"Standard case" .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<http://www.w3.org/2000/01/rdf-schema#label>	"Indigo Explorer" .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<https://pid.bayer.com/kos/19050#hasPidUriSearchRegex>	"^https://pid.bayer.com(.*)$" .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<https://pid.bayer.com/kos/19050#hasPidUriSearchRegex>	"^https://pid.bayer.com(.*)" .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<https://pid.bayer.com/kos/19050#hasReplacementString>	"{targetUri}$1" .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<https://pid.bayer.com/kos/19050#hasReplacementString>	"{targetUri}#{encodedPidUri}$1" .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<https://pid.bayer.com/kos/19050#hasTargetUriMatchRegex>	"^(.*)$" .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<https://pid.bayer.com/kos/19050#hasTargetUriMatchRegex>	"^https://indigo-explorer.intranet.cnb/" .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<https://pid.bayer.com/kos/19050#UseHttpScheme>	"false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<https://pid.bayer.com/kos/19050#UseHttpScheme>	"true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://pid.bayer.com/kos/19050#21264244-197d-4648-87a5-4a0a4aca7d55>	<https://pid.bayer.com/kos/19050#hasOrder>	"4" .
+<https://pid.bayer.com/kos/19050#63ce0fcc-caf3-4af1-9b9b-80ad9b2a3e40>	<https://pid.bayer.com/kos/19050#hasOrder>	"1" .

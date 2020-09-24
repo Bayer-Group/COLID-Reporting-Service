@@ -1,0 +1,52 @@
+<https://pid.bayer.com/kos/19050#faba7bb0-ec34-4e57-92b2-0b6a5d3c89f0>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#7dfadfe8-2782-494f-90cd-eb977c13346a>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#a27e2b58-9c10-4128-8d68-3b4b05811da1>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#57b96631-ae62-4e7f-870b-094b39d01b22>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#2333a665-4d22-4ed4-8b49-1199543a2e06>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#96ae7fe7-91fa-47da-89a7-33c9e2936497>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#3976a5fd-fdb0-4eb4-80c0-d1d850a7b23e>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#9c30048d-a015-4452-849e-bb98d325d74e>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#2cf7600c-b694-43bf-8720-6c93ed5db2c9>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#9776f79a-40bf-482e-9b51-81652b1a6717>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#7151d302-382c-4dda-ba78-111dd5f90fef>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#63b5ed81-c401-4b27-af91-bb9c209b0397>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#5e0aee47-ec24-45dc-a107-2036db5fd295>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#2d9c7d23-9ec7-4569-842a-de64bedebba9>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#0efbb726-655c-47d1-b093-8d66e9f29aa8>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#edec6df9-57a5-4245-96c5-07915c793118>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#d8800adc-2cc2-47e8-a45a-f1195ecee09d>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#a1525e62-3cf9-462d-bedb-06158f2ccfcc>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#ba3a8a18-4809-4e0a-b1ba-b8e35931dd3e>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#d4445213-327d-43cb-bb6a-b4c7b6b7d475>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#047e43cd-dee6-4dfe-a272-5c370e189574>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#266a4658-b567-49e5-babf-360062369dad>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#c7046e64-863a-4aa8-aa44-5248c21308b3>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#c047f45b-c609-45b5-a554-1398353ab71c>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#d25e7a5c-99ee-46b1-884d-23294abeb47e>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#2607c3bc-2d63-44ed-8bdb-77947be28875>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<https://pid.bayer.com/kos/19050/Keyword> .
+<https://pid.bayer.com/kos/19050#faba7bb0-ec34-4e57-92b2-0b6a5d3c89f0>	<http://www.w3.org/2000/01/rdf-schema#label>	"Finished Goods" .
+<https://pid.bayer.com/kos/19050#7dfadfe8-2782-494f-90cd-eb977c13346a>	<http://www.w3.org/2000/01/rdf-schema#label>	"Consumer Health" .
+<https://pid.bayer.com/kos/19050#a27e2b58-9c10-4128-8d68-3b4b05811da1>	<http://www.w3.org/2000/01/rdf-schema#label>	"PID" .
+<https://pid.bayer.com/kos/19050#57b96631-ae62-4e7f-870b-094b39d01b22>	<http://www.w3.org/2000/01/rdf-schema#label>	"Pharma" .
+<https://pid.bayer.com/kos/19050#2333a665-4d22-4ed4-8b49-1199543a2e06>	<http://www.w3.org/2000/01/rdf-schema#label>	"MRL" .
+<https://pid.bayer.com/kos/19050#96ae7fe7-91fa-47da-89a7-33c9e2936497>	<http://www.w3.org/2000/01/rdf-schema#label>	"Formulation" .
+<https://pid.bayer.com/kos/19050#3976a5fd-fdb0-4eb4-80c0-d1d850a7b23e>	<http://www.w3.org/2000/01/rdf-schema#label>	"supply chain" .
+<https://pid.bayer.com/kos/19050#9c30048d-a015-4452-849e-bb98d325d74e>	<http://www.w3.org/2000/01/rdf-schema#label>	"Crop Science" .
+<https://pid.bayer.com/kos/19050#2cf7600c-b694-43bf-8720-6c93ed5db2c9>	<http://www.w3.org/2000/01/rdf-schema#label>	"Product Supply" .
+<https://pid.bayer.com/kos/19050#9776f79a-40bf-482e-9b51-81652b1a6717>	<http://www.w3.org/2000/01/rdf-schema#label>	"DINOS API" .
+<https://pid.bayer.com/kos/19050#7151d302-382c-4dda-ba78-111dd5f90fef>	<http://www.w3.org/2000/01/rdf-schema#label>	"ALS API" .
+<https://pid.bayer.com/kos/19050#63b5ed81-c401-4b27-af91-bb9c209b0397>	<http://www.w3.org/2000/01/rdf-schema#label>	"DINOSAPI" .
+<https://pid.bayer.com/kos/19050#5e0aee47-ec24-45dc-a107-2036db5fd295>	<http://www.w3.org/2000/01/rdf-schema#label>	"R&D" .
+<https://pid.bayer.com/kos/19050#2d9c7d23-9ec7-4569-842a-de64bedebba9>	<http://www.w3.org/2000/01/rdf-schema#label>	"Genes" .
+<https://pid.bayer.com/kos/19050#0efbb726-655c-47d1-b093-8d66e9f29aa8>	<http://www.w3.org/2000/01/rdf-schema#label>	"Trials" .
+<https://pid.bayer.com/kos/19050#edec6df9-57a5-4245-96c5-07915c793118>	<http://www.w3.org/2000/01/rdf-schema#label>	"Drugs" .
+<https://pid.bayer.com/kos/19050#d8800adc-2cc2-47e8-a45a-f1195ecee09d>	<http://www.w3.org/2000/01/rdf-schema#label>	"Trialtrove" .
+<https://pid.bayer.com/kos/19050#a1525e62-3cf9-462d-bedb-06158f2ccfcc>	<http://www.w3.org/2000/01/rdf-schema#label>	"Citeline" .
+<https://pid.bayer.com/kos/19050#ba3a8a18-4809-4e0a-b1ba-b8e35931dd3e>	<http://www.w3.org/2000/01/rdf-schema#label>	"Pharma Projects" .
+<https://pid.bayer.com/kos/19050#d4445213-327d-43cb-bb6a-b4c7b6b7d475>	<http://www.w3.org/2000/01/rdf-schema#label>	"NCBI" .
+<https://pid.bayer.com/kos/19050#047e43cd-dee6-4dfe-a272-5c370e189574>	<http://www.w3.org/2000/01/rdf-schema#label>	"UMLS" .
+<https://pid.bayer.com/kos/19050#266a4658-b567-49e5-babf-360062369dad>	<http://www.w3.org/2000/01/rdf-schema#label>	"SKOS" .
+<https://pid.bayer.com/kos/19050#c7046e64-863a-4aa8-aa44-5248c21308b3>	<http://www.w3.org/2000/01/rdf-schema#label>	"UniProt" .
+<https://pid.bayer.com/kos/19050#c047f45b-c609-45b5-a554-1398353ab71c>	<http://www.w3.org/2000/01/rdf-schema#label>	"PORTIN" .
+<https://pid.bayer.com/kos/19050#d25e7a5c-99ee-46b1-884d-23294abeb47e>	<http://www.w3.org/2000/01/rdf-schema#label>	"biosample" .
+<https://pid.bayer.com/kos/19050#2607c3bc-2d63-44ed-8bdb-77947be28875>	<http://www.w3.org/2000/01/rdf-schema#label>	"biomarker" .

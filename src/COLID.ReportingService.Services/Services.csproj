@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>COLID.ReportingService.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\COLID.ReportingService.Common\Common.csproj" />
+    <ProjectReference Include="..\COLID.ReportingService.References\References.csproj" />
+    <ProjectReference Include="..\COLID.ReportingService.Repositories\Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
