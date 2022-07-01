@@ -65,5 +65,12 @@ namespace COLID.ReportingService.Services.Interface
         /// </summary>
         /// <returns>list of expression counts</returns>
         IList<PropertyCharacteristic> GetInformationClassificationCharacteristics();
+
+        /// <summary>
+        /// Returns the number of different expressions of resource lifecycle statuses
+        /// </summary>
+        /// <returns>list of expression counts</returns>
+        IList<PropertyCharacteristic> GetLifecycleStatusCharacteristics();
     }
 }
+

@@ -152,5 +152,19 @@ namespace COLID.ReportingService.WebApi.Controllers
         {
             return Ok(_resourceStatisticsService.GetInformationClassificationCharacteristics());
         }
+
+        /// <summary>
+        /// Returns the number of different expressions of resource lifecycle status
+        /// </summary>
+        /// <remarks>
+        /// </remarks>
+        /// <response code="200">Return list of expression counts</response>
+        /// <response code="400">If an invalid uri is given</response>
+        /// <response code="500">If an unexpected error occurs</response>
+        [HttpGet("resource/characteristics/lifecyclestatus")]
+        public IActionResult GetLifecycleStatusCharacteristics()
+        {
+            return Ok(_resourceStatisticsService.GetLifecycleStatusCharacteristics());
+        }
     }
 }

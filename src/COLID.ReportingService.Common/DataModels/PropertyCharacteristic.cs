@@ -12,8 +12,12 @@ namespace COLID.ReportingService.Common.DataModels
 
         public string Name { get; set; }
 
+        public int DraftCount { get; set; }
+
+        public int PublishedCount { get; set; }
+
         public PropertyCharacteristic() { }
 
-        public PropertyCharacteristic(string key, string count, string name) { }
+        public PropertyCharacteristic(string key, string count, string name, int DraftCount, int PublishedCount) { }
     }
 }

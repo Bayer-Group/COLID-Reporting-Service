@@ -23,10 +23,10 @@ namespace COLID.ReportingService.UnitTests.Builder
         {
             _characteristics = new List<PropertyCharacteristic>()
             {
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#2b3f0380-dd22-4666-a28b-7f1eeb82a5ff","471", "Data Services"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c","309", "INDIGO"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#82fc2870-ca4e-407f-a197-bf3766ad785f","59", "DINOS"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#3bb018e4-b006-4c9d-a85c-cd409fec89e5","36", "GeAR Metadata"),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#2b3f0380-dd22-4666-a28b-7f1eeb82a5ff","471", "Data Services",200,271),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#bf2f8eeb-fdb9-4ee1-ad88-e8932fa8753c","309", "INDIGO",300,9),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#82fc2870-ca4e-407f-a197-bf3766ad785f","59", "DINOS",50,9),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050#3bb018e4-b006-4c9d-a85c-cd409fec89e5","36", "GeAR Metadata",30,6),
             };
 
             return this;
@@ -36,11 +36,11 @@ namespace COLID.ReportingService.UnitTests.Builder
         {
             _characteristics = new List<PropertyCharacteristic>()
             {
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/GenericDataset","429", "Generic Dataset"),
-                new PropertyCharacteristic("https://pid.bayer.com/d188c668-b710-45b2-9631-faf29e85ac8d/RWD_Source","10", "RWD Source"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/MathematicalModel","5", "Mathematical Model"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/RDFDatasetWithInstances","4", "RDF Dataset with Instances"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Mapping","3", "Mapping")
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/GenericDataset","429", "Generic Dataset",420,29),
+                new PropertyCharacteristic("https://pid.bayer.com/d188c668-b710-45b2-9631-faf29e85ac8d/RWD_Source","10", "RWD Source",5,5),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/MathematicalModel","5", "Mathematical Model",5,0),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/RDFDatasetWithInstances","4", "RDF Dataset with Instances",4,1),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Mapping","3", "Mapping",2,1)
             };
 
             return this;
@@ -50,10 +50,21 @@ namespace COLID.ReportingService.UnitTests.Builder
         {
             _characteristics = new List<PropertyCharacteristic>()
             {
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Restricted","585", "Restricted"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Internal","228", "Internal"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Open","44", "Open"),
-                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Secret","17", "Secret")
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Restricted","585", "Restricted",500,85),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Internal","228", "Internal",200,28),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Open","44", "Open",40,4),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/Secret","17", "Secret",10,7)
+            };
+
+            return this;
+        }
+
+        public PropertyCharacteristicListBuilder GenerateLifecycleStatusCharacteristics()
+        {
+            _characteristics = new List<PropertyCharacteristic>()
+            {
+                new PropertyCharacteristic("https://pid/bayer/com/kos/19050/underDevelopment","13", "Under Development",10,3),
+                new PropertyCharacteristic("https://pid.bayer.com/kos/19050/released","11", "Released",10,1),
             };
 
             return this;

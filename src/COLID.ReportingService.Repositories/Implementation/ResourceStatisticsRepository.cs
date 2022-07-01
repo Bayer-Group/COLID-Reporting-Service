@@ -33,9 +33,9 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                     @"SELECT ?predicate ?predicateName (count(distinct ?resource) as ?resources) ?minCount ?group
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromConsumerGroupNamedGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataShaclNamedGraph
                       WHERE {
                             Values ?type { @resourceTypes }
                             {
@@ -63,9 +63,9 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromConsumerGroupNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasConsumerGroupGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataShaclNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
             parametrizedString.SetUri("distribution", new Uri(Resource.Distribution));
@@ -91,9 +91,9 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                    @"SELECT ?predicate ?predicateName ?label ?o (count(DISTINCT ?resource) as ?valueSum)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromConsumerGroupNamedGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataShaclNamedGraph
                       WHERE
                       {
                           Values ?type { @resourceTypes }
@@ -111,9 +111,9 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromConsumerGroupNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasConsumerGroupGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataShaclNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
 
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
@@ -153,10 +153,9 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                   @"SELECT ?predicate (count(DISTINCT ?resource) as ?valueSum)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromConsumerGroupNamedGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataShaclNamedGraph
-                      @fromMetdataCoreNamedGraph
                       WHERE
                       {
                           @predicate rdfs:domain ?class .
@@ -170,10 +169,9 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromConsumerGroupNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasConsumerGroupGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataShaclNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataCoreNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasECOGraph).JoinAsFromNamedGraphs());
 
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
@@ -195,36 +193,55 @@ namespace COLID.ReportingService.Repositories.Implementation
             var parametrizedString = new SparqlParameterizedString
             {
                 CommandText =
-                   @"SELECT ?type ?label (count(?resource) as ?count)
+                   @"SELECT ?type ?label (count(?resource) as ?count) (count(?resourceDraft) as ?resourceDraftCount) 
+                      (count(?resourcePublished) as ?resourcePublishedCount)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataCoreNamedGraph
                       WHERE
                       {
-                          Values ?type { @resourceTypes }
+                          {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
                           FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?type rdfs:label ?label.
-                          FILTER(lang(?label) IN (@language , """"))
+                          FILTER(lang(?label) IN (@language , """"))}
+			           UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourceDraft rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
+                          ?type rdfs:label ?label.
+                          ?resourceDraft @hasEntryLifecycleStatus @draftStatus. 
+                          FILTER(lang(?label) IN (@language , """"))}
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourcePublished rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
+                          ?type rdfs:label ?label.
+                          ?resourcePublished @hasEntryLifecycleStatus @publishedStatus.
+                          FILTER(lang(?label) IN (@language , """"))}
                       }
                       GROUP BY ?type ?label"
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataCoreNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasECOGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
             parametrizedString.SetLiteral("language", I18n.DefaultLanguage);
 
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
+            parametrizedString.SetUri("hasEntryLifecycleStatus", new Uri(Resource.HasEntryLifecycleStatus));
+            parametrizedString.SetUri("draftStatus", new Uri(Resource.ColidEntryLifecycleStatus.Draft));
+            parametrizedString.SetUri("publishedStatus", new Uri(Resource.ColidEntryLifecycleStatus.Published));
             var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
 
             var characteristics = results.Select(result => new PropertyCharacteristic()
             {
                 Name = result.GetNodeValuesFromSparqlResult("label")?.Value,
                 Key = result.GetNodeValuesFromSparqlResult("type")?.Value,
-                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value)
-
+                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value),
+                DraftCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourceDraftCount")?.Value),
+                PublishedCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourcePublishedCount")?.Value)
             }).ToList();
 
             return characteristics;
@@ -240,35 +257,55 @@ namespace COLID.ReportingService.Repositories.Implementation
             var parametrizedString = new SparqlParameterizedString
             {
                 CommandText =
-                   @"SELECT ?consumerGroup ?label (count(?resource) as ?count)
+                   @"SELECT ?consumerGroup ?label (count(?resource) as ?count) (count(?resourceDraft) as ?resourceDraftCount) 
+                      (count(?resourcePublished) as ?resourcePublishedCount)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromConsumerGroupNamedGraph
                       WHERE
                       {
-                          Values ?type { @resourceTypes }
+                          {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
                           FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasConsumerGroup ?consumerGroup.
+                          ?consumerGroup rdfs:label ?label.}
+                      UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourceDraft rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
+                          ?resourceDraft @hasConsumerGroup ?consumerGroup.
                           ?consumerGroup rdfs:label ?label.
+                          ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourcePublished rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
+                          ?resourcePublished @hasConsumerGroup ?consumerGroup.
+                          ?consumerGroup rdfs:label ?label.
+                          ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
                       }
                       GROUP BY ?consumerGroup ?label"
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromConsumerGroupNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasConsumerGroupGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
 
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasConsumerGroup", new Uri(Resource.HasConsumerGroup));
-
+            parametrizedString.SetUri("hasEntryLifecycleStatus", new Uri(Resource.HasEntryLifecycleStatus));
+            parametrizedString.SetUri("draftStatus", new Uri(Resource.ColidEntryLifecycleStatus.Draft));
+            parametrizedString.SetUri("publishedStatus", new Uri(Resource.ColidEntryLifecycleStatus.Published));
             var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
 
             var characteristics = results.Select(result => new PropertyCharacteristic()
             {
                 Name = result.GetNodeValuesFromSparqlResult("label")?.Value,
                 Key = result.GetNodeValuesFromSparqlResult("consumerGroup")?.Value,
-                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value)
-
+                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value),
+                DraftCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourceDraftCount")?.Value),
+                PublishedCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourcePublishedCount")?.Value)
             }).ToList();
 
             return characteristics;
@@ -284,35 +321,55 @@ namespace COLID.ReportingService.Repositories.Implementation
             var parametrizedString = new SparqlParameterizedString
             {
                 CommandText =
-                   @"SELECT ?informationClassification ?label (count(?resource) as ?count)
+                   @"SELECT ?informationClassification ?label (count(?resource) as ?count) (count(?resourceDraft) as ?resourceDraftCount) 
+                      (count(?resourcePublished) as ?resourcePublishedCount)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromMetadataNamedGraph
                       WHERE
                       {
-                          Values ?type { @resourceTypes }
+                          {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
                           FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasInformationClassification ?informationClassification.
+                          ?informationClassification rdfs:label ?label.}
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourceDraft rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
+                          ?resourceDraft @hasInformationClassification ?informationClassification.
                           ?informationClassification rdfs:label ?label.
+                          ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourcePublished rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
+                          ?resourcePublished @hasInformationClassification ?informationClassification.
+                          ?informationClassification rdfs:label ?label.
+                          ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
                       }
                       GROUP BY ?informationClassification ?label"
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
 
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasInformationClassification", new Uri(Resource.HasInformationClassification));
-
+            parametrizedString.SetUri("hasEntryLifecycleStatus", new Uri(Resource.HasEntryLifecycleStatus));
+            parametrizedString.SetUri("draftStatus", new Uri(Resource.ColidEntryLifecycleStatus.Draft));
+            parametrizedString.SetUri("publishedStatus", new Uri(Resource.ColidEntryLifecycleStatus.Published));
             var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
 
             var characteristics = results.Select(result => new PropertyCharacteristic()
             {
                 Name = result.GetNodeValuesFromSparqlResult("label")?.Value,
                 Key = result.GetNodeValuesFromSparqlResult("informationClassification")?.Value,
-                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value)
-
+                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value),
+                DraftCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourceDraftCount")?.Value),
+                PublishedCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourcePublishedCount")?.Value)
             }).ToList();
 
             return characteristics;
@@ -335,6 +392,7 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                     @"SELECT (COUNT(DISTINCT ?resource) AS ?resourceSum)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       WHERE {
                           Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
@@ -344,6 +402,7 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
             parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
@@ -365,8 +424,8 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                    @"SELECT DISTINCT *
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataShaclNamedGraph
                       WHERE
                       {
                           Values ?type { @resourceTypes }
@@ -384,8 +443,8 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataShaclNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
             parametrizedString.SetUri("predicate", predicate);
@@ -407,6 +466,7 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText = @"
                       SELECT (count(distinct ?laterVersion) as ?laterVersions)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       WHERE
                       {
                           Values ?type { @resourceTypes }
@@ -421,6 +481,7 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
             parametrizedString.SetUri("hasLaterVersion", new Uri(Resource.HasLaterVersion));
@@ -443,8 +504,8 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText = @"
                       Select ?links (count(?resource) as ?resources)
                       @fromResourceNamedGraph
+                      @fromResourceDraftGraph
                       @fromMetadataNamedGraph
-                      @fromMetdataShaclNamedGraph
                       where {
                              SELECT ?resource (count(?link) as ?links)
 
@@ -475,8 +536,8 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromMetdataShaclNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
             parametrizedString.SetUri("hasPidUri", new Uri(EnterpriseCore.PidUri));
 
@@ -484,6 +545,73 @@ namespace COLID.ReportingService.Repositories.Implementation
 
             var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
             return results.Select(res => new PropertyStatisticItem(res.GetNodeValuesFromSparqlResult("links")?.Value, res.GetNodeValuesFromSparqlResult("resources")?.Value, null)).ToList();
+        }
+
+        public IList<PropertyCharacteristic> GetLifecycleStatusCharacteristics(IList<string> resourceTypes)
+        {
+            if (!resourceTypes.Any())
+            {
+                return new List<PropertyCharacteristic>();
+            }
+
+            var parametrizedString = new SparqlParameterizedString
+            {
+                CommandText =
+                   @"SELECT ?lifecycleStatus ?label (count(?resource) as ?count) (count(?resourceDraft) as ?resourceDraftCount) 
+                      (count(?resourcePublished) as ?resourcePublishedCount)
+                      @fromResourceNamedGraph
+                      @fromResourceDraftGraph
+                      @fromMetadataNamedGraph
+                      WHERE
+                      {
+                          {Values ?type { @resourceTypes }
+                          ?resource rdf:type ?type.
+                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
+                          ?resource @hasLifecycleStatus ?lifecycleStatus.
+                          ?lifecycleStatus rdfs:label ?label.
+                          ?resource @hasEntryLifecycleStatus ?resourceStatus.}
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourceDraft rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
+                          ?resourceDraft @hasLifecycleStatus ?lifecycleStatus.
+                          ?lifecycleStatus rdfs:label ?label.
+                          ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
+                       UNION
+                          {Values ?type { @resourceTypes }
+                          ?resourcePublished rdf:type ?type.
+                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
+                          ?resourcePublished @hasLifecycleStatus ?lifecycleStatus.
+                          ?lifecycleStatus rdfs:label ?label.
+                          ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
+                      }
+                      GROUP BY ?lifecycleStatus ?label"
+            };
+
+            parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromResourceDraftGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesDraftGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
+
+            parametrizedString.SetUri("hasPidEntryDraft", new Uri(Resource.HasPidEntryDraft));
+            parametrizedString.SetUri("hasLifecycleStatus", new Uri(Resource.LifecycleStatus));
+            parametrizedString.SetUri("hasEntryLifecycleStatus", new Uri(Resource.HasEntryLifecycleStatus));
+            parametrizedString.SetUri("draftStatus", new Uri(Resource.ColidEntryLifecycleStatus.Draft));
+            parametrizedString.SetUri("publishedStatus", new Uri(Resource.ColidEntryLifecycleStatus.Published));
+
+
+            var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
+
+            var characteristics = results.Select(result => new PropertyCharacteristic()
+            {
+                Name = result.GetNodeValuesFromSparqlResult("label")?.Value,
+                Key = result.GetNodeValuesFromSparqlResult("lifecycleStatus")?.Value,
+                Count = ParseStringToInt(result.GetNodeValuesFromSparqlResult("count")?.Value),
+                DraftCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourceDraftCount")?.Value),
+                PublishedCount = ParseStringToInt(result.GetNodeValuesFromSparqlResult("resourcePublishedCount")?.Value)
+            }).ToList();
+
+            return characteristics;
         }
     }
 }

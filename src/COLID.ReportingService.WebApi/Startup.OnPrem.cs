@@ -16,7 +16,7 @@ namespace COLID.ReportingService.WebApi
             services.AddCacheModule(Configuration, JsonSerializerSettings.GetSerializerSettings());
         }
 
-        public void ConfigureOnPrem(IApplicationBuilder app, IWebHostEnvironment env)
+        public void ConfigureOnPrem(IApplicationBuilder app)
         {
             // Following problem still exists with .NET Core 3.1 (latest test on 2020-07-22):
             // Accessing TLS secured APIs with the new SocketsHttpHandler introduced in .NET Core 2.1 results into exception "No such host is known".
@@ -24,7 +24,7 @@ namespace COLID.ReportingService.WebApi
             // See https://docs.microsoft.com/en-us/dotnet/api/system.net.http.socketshttphandler?view=netcore-3.1#remarks
             AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
 
-            Configure(app, env);
+            Configure(app);
         }
     }
 }

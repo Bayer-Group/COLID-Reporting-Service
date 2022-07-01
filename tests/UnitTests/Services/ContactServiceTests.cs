@@ -94,7 +94,7 @@ namespace UnitTests.Services
         [InlineData("")]
         public async Task GetContactReferencedEntries_Should_ThrowError_IfEmailIsNullOrEmpty(string email)
         {
-            await Assert.ThrowsAsync<ArgumentException>(async () => await _contactService.GetContactReferencedEntries(email));
+            await Assert.ThrowsAsync<ArgumentNullException>(async () => await _contactService.GetContactReferencedEntries(email));
         }
     }
 }

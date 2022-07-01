@@ -15,9 +15,9 @@ namespace COLID.ReportingService.WebApi
             services.AddDistributedCacheModule(Configuration, JsonSerializerSettings.GetSerializerSettings());
         }
 
-        public void ConfigureRelease(IApplicationBuilder app, IWebHostEnvironment env)
+        public void ConfigureRelease(IApplicationBuilder app)
         {
-            Configure(app, env);
+            Configure(app);
         }
     }
 }

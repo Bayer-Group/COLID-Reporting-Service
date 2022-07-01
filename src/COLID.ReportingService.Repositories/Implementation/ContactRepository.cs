@@ -29,7 +29,6 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                     @"SELECT DISTINCT ?contact
                       @fromResourceNamedGraph
-                      @fromEcoNamedGraph
                       @fromMetadataNamedGraph
                       WHERE {
                                 ?range rdfs:subClassOf* <http://pid.bayer.com/kos/19014/Person>.
@@ -42,7 +41,6 @@ namespace COLID.ReportingService.Repositories.Implementation
             var technicalGroups = new HashSet<string> { Resource.Groups.TechnicalInformation, Resource.Groups.InvisibleTechnicalInformation };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromEcoNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasECOGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("technicalGroups", technicalGroups.JoinAsValuesList());
 
@@ -66,9 +64,7 @@ namespace COLID.ReportingService.Repositories.Implementation
                 CommandText =
                     @"SELECT DISTINCT *
                       @fromResourceNamedGraph
-                      @fromEcoNamedGraph
                       @fromMetadataNamedGraph
-                      @fromShacledNamedGraph
                       WHERE {
                                 Values ?contactType { @contactTypes }
                                 ?predicate rdfs:range ?contactType.
@@ -109,9 +105,7 @@ namespace COLID.ReportingService.Repositories.Implementation
             };
 
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromEcoNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasECOGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
-            parametrizedString.SetPlainLiteral("fromShacledNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasShaclConstraintsGraph).JoinAsFromNamedGraphs());
 
             parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
             parametrizedString.SetPlainLiteral("contactTypes", contactTypes.JoinAsValuesList());

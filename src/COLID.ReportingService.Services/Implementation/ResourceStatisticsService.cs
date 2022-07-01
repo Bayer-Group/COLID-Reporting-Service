@@ -70,7 +70,7 @@ namespace COLID.ReportingService.Services.Implementation
         public PropertyStatistics GetNumberOfResourcesInRelationToNumberOfPropertyWords(Uri property, int increment)
         {
             Guard.IsValidUri(property);
-            Guard.IsGreaterZero(increment);
+            Guard.IsGreaterThanZero(increment);
 
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
             var results = _resourceStatisticsRepository.GetPropertyValuesOfAllResources(property, types);
@@ -87,7 +87,7 @@ namespace COLID.ReportingService.Services.Implementation
         /// <returns></returns>
         public PropertyStatistics GetNumberOfVersionsOfResources(int increment)
         {
-            Guard.IsGreaterZero(increment);
+            Guard.IsGreaterThanZero(increment);
 
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
             var results = _resourceStatisticsRepository.GetNumberOfVersionsOfResources(types);
@@ -130,6 +130,14 @@ namespace COLID.ReportingService.Services.Implementation
         {
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
             return _resourceStatisticsRepository.GetInformationClassificationCharacteristics(types)
+                .OrderByDescending(t => t.Count)
+                .ToList();
+        }
+
+        public IList<PropertyCharacteristic> GetLifecycleStatusCharacteristics()
+        {
+            var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
+            return _resourceStatisticsRepository.GetLifecycleStatusCharacteristics(types)
                 .OrderByDescending(t => t.Count)
                 .ToList();
         }

@@ -255,7 +255,20 @@ namespace COLID.ReportingService.UnitTests.Services
             _mockStatisticsRepository.Verify(x => x.GetInformationClassificationCharacteristics(It.IsAny<IList<string>>()), Times.Once);
             Assert.Equal(characteristics.Count, result.Count);
         }
+        [Fact]
+        public void GetLifecycleStatusCharacteristics_Should_ReturnLifecycleStatusCharacteristics()
+        {
+            // Arrange
+            var characteristics = new PropertyCharacteristicListBuilder().GenerateLifecycleStatusCharacteristics().Build();
+            _mockStatisticsRepository.Setup(s => s.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>())).Returns(characteristics);
 
+            // Act
+            var result = _statisticsService.GetLifecycleStatusCharacteristics();
+
+            // Assert
+            _mockStatisticsRepository.Verify(x => x.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>()), Times.Once);
+            Assert.Equal(characteristics.Count, result.Count);
+        }
 
         #region Helper
         private void AssertPropertyStatisticsResult(PropertyStatistics statistics, string name, int increment, int counts)

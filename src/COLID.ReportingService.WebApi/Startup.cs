@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Reflection;
+using COLID.Common.Logger;
 using COLID.Exception;
 using COLID.Identity;
 using COLID.ReportingService.Repositories;
 using COLID.ReportingService.Services;
 using COLID.Swagger;
+using CorrelationId;
+using CorrelationId.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +37,8 @@ namespace COLID.ReportingService.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDefaultCorrelationId();
+            services.AddCorrelationIdLogger();
             services.AddCors();
 
             services.AddHealthChecks();
@@ -57,8 +61,9 @@ namespace COLID.ReportingService.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
+            app.UseCorrelationId();
             app.UseHttpsRedirection();
 
             app.UseRouting();
