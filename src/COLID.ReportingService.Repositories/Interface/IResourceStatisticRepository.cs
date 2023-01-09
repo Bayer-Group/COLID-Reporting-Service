@@ -88,5 +88,19 @@ namespace COLID.ReportingService.Repositories.Interface
         /// <param name="resourceTypes">the resource type list to count</param>
         /// <returns>list of expression counts</returns>
         IList<PropertyCharacteristic> GetLifecycleStatusCharacteristics(IList<string> resourceTypes);
+
+        /// <summary>
+        /// Returns property list against provided resource Types.
+        /// </summary>
+        /// <param name="resourceTypes"></param>
+        /// <returns></returns>
+        IList<PropertyMetadata> GetAllPropertiesByResourceTypes(IList<string> resourceTypes);
+
+        /// <summary>
+        /// Returns count of usage of each property
+        /// </summary>
+        /// <param name="properties"></param>
+        /// <returns></returns>
+        IList<PropertyUsage> GetUsageOfProperties(IList<string> properties);
     }
 }

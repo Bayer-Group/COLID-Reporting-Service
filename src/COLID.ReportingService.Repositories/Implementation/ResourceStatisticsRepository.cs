@@ -202,20 +202,17 @@ namespace COLID.ReportingService.Repositories.Implementation
                       {
                           {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?type rdfs:label ?label.
                           FILTER(lang(?label) IN (@language , """"))}
 			           UNION
                           {Values ?type { @resourceTypes }
                           ?resourceDraft rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
                           ?type rdfs:label ?label.
                           ?resourceDraft @hasEntryLifecycleStatus @draftStatus. 
                           FILTER(lang(?label) IN (@language , """"))}
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourcePublished rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
                           ?type rdfs:label ?label.
                           ?resourcePublished @hasEntryLifecycleStatus @publishedStatus.
                           FILTER(lang(?label) IN (@language , """"))}
@@ -266,20 +263,17 @@ namespace COLID.ReportingService.Repositories.Implementation
                       {
                           {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasConsumerGroup ?consumerGroup.
                           ?consumerGroup rdfs:label ?label.}
                       UNION
                           {Values ?type { @resourceTypes }
                           ?resourceDraft rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
                           ?resourceDraft @hasConsumerGroup ?consumerGroup.
                           ?consumerGroup rdfs:label ?label.
                           ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourcePublished rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
                           ?resourcePublished @hasConsumerGroup ?consumerGroup.
                           ?consumerGroup rdfs:label ?label.
                           ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
@@ -330,20 +324,17 @@ namespace COLID.ReportingService.Repositories.Implementation
                       {
                           {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasInformationClassification ?informationClassification.
                           ?informationClassification rdfs:label ?label.}
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourceDraft rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
                           ?resourceDraft @hasInformationClassification ?informationClassification.
                           ?informationClassification rdfs:label ?label.
                           ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourcePublished rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
                           ?resourcePublished @hasInformationClassification ?informationClassification.
                           ?informationClassification rdfs:label ?label.
                           ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
@@ -396,7 +387,6 @@ namespace COLID.ReportingService.Repositories.Implementation
                       WHERE {
                           Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource  @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasPidUri ?pidUri .
                         }"
             };
@@ -430,7 +420,6 @@ namespace COLID.ReportingService.Repositories.Implementation
                       {
                           Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasPidUri ?pidUri .
                           OPTIONAL {
                           ?resource @predicate ?string.
@@ -566,21 +555,18 @@ namespace COLID.ReportingService.Repositories.Implementation
                       {
                           {Values ?type { @resourceTypes }
                           ?resource rdf:type ?type.
-                          FILTER NOT EXISTS { ?resource @hasPidEntryDraft ?draftResource. }.
                           ?resource @hasLifecycleStatus ?lifecycleStatus.
                           ?lifecycleStatus rdfs:label ?label.
                           ?resource @hasEntryLifecycleStatus ?resourceStatus.}
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourceDraft rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourceDraft @hasPidEntryDraft ?draftResource. }.
                           ?resourceDraft @hasLifecycleStatus ?lifecycleStatus.
                           ?lifecycleStatus rdfs:label ?label.
                           ?resourceDraft @hasEntryLifecycleStatus @draftStatus. }
                        UNION
                           {Values ?type { @resourceTypes }
                           ?resourcePublished rdf:type ?type.
-                          FILTER NOT EXISTS { ?resourcePublished @hasPidEntryDraft ?draftResource. }.
                           ?resourcePublished @hasLifecycleStatus ?lifecycleStatus.
                           ?lifecycleStatus rdfs:label ?label.
                           ?resourcePublished @hasEntryLifecycleStatus @publishedStatus. }
@@ -612,6 +598,97 @@ namespace COLID.ReportingService.Repositories.Implementation
             }).ToList();
 
             return characteristics;
+        }
+
+        /// <summary>
+        /// Returns property list against provided resource Types.
+        /// </summary>
+        /// <returns></returns>
+        public IList<PropertyMetadata> GetAllPropertiesByResourceTypes(IList<string> resourceTypes)
+        {
+            var parametrizedString = new SparqlParameterizedString
+            {
+                CommandText =
+                    @"SELECT *
+                      @fromResourceNamedGraph                      
+                      @fromConsumerGroupNamedGraph
+                      @fromMetadataNamedGraph
+                      WHERE {
+                            Values ?resourceType  { @resourceTypes }
+                            ?resourceType sh:property ?ShaclConstraint.                    
+                            ?ShaclConstraint sh:name ?PropertName . 
+                            ?ShaclConstraint sh:path ?PropertyUri.
+                            ?ShaclConstraint sh:group ?GroupType .                    
+                            OPTIONAL { ?ShaclConstraint sh:minCount ?IsMandatory . }
+                            }"
+            };
+
+            parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromConsumerGroupNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasConsumerGroupGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("resourceTypes", resourceTypes.JoinAsValuesList());
+
+            var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
+
+            var countResults = results.Select(res =>
+                new PropertyMetadata
+                {
+                    GroupType = res.GetNodeValuesFromSparqlResult("GroupType")?.Value,
+                    ResourceType = res.GetNodeValuesFromSparqlResult("resourceType")?.Value,
+                    ShaclConstraint = res.GetNodeValuesFromSparqlResult("ShaclConstraint")?.Value,
+                    PropertyUri = res.GetNodeValuesFromSparqlResult("PropertyUri")?.Value,
+                    PropertyName = res.GetNodeValuesFromSparqlResult("PropertName")?.Value,
+                    IsMandatory = (res.GetNodeValuesFromSparqlResult("IsMandatory")?.Value == "1" ? true : false)
+                });
+
+            return countResults.ToList();
+        }
+
+        /// <summary>
+        /// Returns count of usage of each property
+        /// </summary>
+        /// <param name="properties"></param>
+        /// <returns></returns>
+        public IList<PropertyUsage> GetUsageOfProperties(IList<string> properties)
+        {
+            var propUsage = properties.Select(prop => new PropertyUsage { PropertyUri = prop, UsageCount = 0 }).ToList();
+
+            var parametrizedString = new SparqlParameterizedString
+            {
+                CommandText =
+                    @"SELECT ?p (COUNT(DISTINCT ?s) AS ?usages)
+                      @fromResourceNamedGraph                      
+                      WHERE {
+                            ?s ?p ?o .
+                            ?s @hasEntryLifecycleStatus @publishedStatus.
+                            Values ?p  { @properties }                            
+                            }
+                      GROUP BY ?p"
+            };
+
+            parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
+            parametrizedString.SetPlainLiteral("properties", properties.JoinAsValuesList());
+            parametrizedString.SetUri("hasEntryLifecycleStatus", new Uri(Resource.HasEntryLifecycleStatus));            
+            parametrizedString.SetUri("publishedStatus", new Uri(Resource.ColidEntryLifecycleStatus.Published));
+
+            var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
+
+            var propUsageResults = results.Select(res =>
+                new PropertyUsage
+                {
+                    PropertyUri = res.GetNodeValuesFromSparqlResult("p")?.Value,
+                    UsageCount = (int.TryParse(res.GetNodeValuesFromSparqlResult("usages")?.Value, out int outValue) == true ? outValue : 0)                     
+                }).ToList();
+
+            //Update input list received as paramter
+            foreach(var prop in propUsageResults)
+            {
+                var curProperty = propUsage.Where(i => i.PropertyUri == prop.PropertyUri).FirstOrDefault();
+                if (curProperty != null)
+                    curProperty.UsageCount = prop.UsageCount;
+            }
+
+            return propUsage;
         }
     }
 }

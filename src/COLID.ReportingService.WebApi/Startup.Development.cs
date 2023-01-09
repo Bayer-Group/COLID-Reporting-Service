@@ -1,4 +1,5 @@
 ﻿using COLID.Cache;
+using COLID.ReportingService.Services.Implementation;
 using COLID.ReportingService.WebApi.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,8 @@ namespace COLID.ReportingService.WebApi
         {
             ConfigureServices(services);
             services.AddDistributedCacheModule(Configuration, JsonSerializerSettings.GetSerializerSettings());
+            services.AddHostedService<ResourceStatisticsBackgroundService>();
+
         }
 
         public void ConfigureDevelopment(IApplicationBuilder app)
