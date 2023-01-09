@@ -20,8 +20,8 @@ namespace COLID.ReportingService.Repositories
                 throw new ArgumentNullException(nameof(services));
             }
 
-            services.AddGraphModule(configuration);
-
+            //services.AddGraphModule(configuration);
+            services.AddSingletonGraphModule(configuration);
             services.AddTransient<IResourceStatisticsRepository, ResourceStatisticsRepository>();
             services.AddTransient<IContactRepository, ContactRepository>();
 
