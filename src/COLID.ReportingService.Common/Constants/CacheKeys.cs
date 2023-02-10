@@ -1,6 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace COLID.ReportingService.Common.Constants
 {
@@ -28,8 +30,15 @@ namespace COLID.ReportingService.Common.Constants
 
         public static class Resource  
         {
-            public const string COLIDResources = "https://pid.bayer.com/kos/19050/444556";
-            public const string CoreEntities = "https://pid.bayer.com/kos/19050/444558";
+            private static readonly string _basePath = Path.GetFullPath("appsettings.json");
+            private static readonly string _filePath = _basePath.Substring(0, _basePath.Length - 16);
+            private static IConfigurationRoot _configuration = new ConfigurationBuilder()
+                         .SetBasePath(_filePath)
+                        .AddJsonFile("appsettings.json")
+                        .Build();
+            public static readonly string _serviceUrl = _configuration.GetValue<string>("ServiceUrl");
+            public static readonly string COLIDResources = _serviceUrl + "kos/19050/444556";
+            public static readonly string CoreEntities = _serviceUrl + "kos/19050/444558";
         }
     }
 }

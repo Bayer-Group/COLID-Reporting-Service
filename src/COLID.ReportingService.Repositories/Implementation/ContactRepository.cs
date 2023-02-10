@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using COLID.Graph.Metadata.Constants;
 using COLID.Graph.Metadata.Repositories;
@@ -7,6 +8,7 @@ using COLID.Graph.TripleStore.Extensions;
 using COLID.Graph.TripleStore.Repositories;
 using COLID.ReportingService.Common.DataModels;
 using COLID.ReportingService.Repositories.Interface;
+using Microsoft.Extensions.Configuration;
 using VDS.RDF.Query;
 
 namespace COLID.ReportingService.Repositories.Implementation
@@ -15,7 +17,13 @@ namespace COLID.ReportingService.Repositories.Implementation
     {
         private readonly ITripleStoreRepository _tripleStoreRepository;
         private readonly IMetadataGraphConfigurationRepository _metadataGraphConfigurationRepository;
-
+        private static readonly string _basePath = Path.GetFullPath("appsettings.json");
+        private static readonly string _filePath = _basePath.Substring(0, _basePath.Length - 16);
+        private static IConfigurationRoot _configuration = new ConfigurationBuilder()
+                         .SetBasePath(_filePath)
+                        .AddJsonFile("appsettings.json")
+                        .Build();
+        public static readonly string _httpserviceUrl = _configuration.GetValue<string>("HttpServiceUrl");
         public ContactRepository(ITripleStoreRepository tripleStoreRepository, IMetadataGraphConfigurationRepository metadataGraphConfigurationRepository)
         {
             _tripleStoreRepository = tripleStoreRepository;
@@ -31,7 +39,7 @@ namespace COLID.ReportingService.Repositories.Implementation
                       @fromResourceNamedGraph
                       @fromMetadataNamedGraph
                       WHERE {
-                                ?range rdfs:subClassOf* <http://pid.bayer.com/kos/19014/Person>.
+                                ?range rdfs:subClassOf* <@httpServiceUrl>.
                                 ?predicate rdfs:range ?range.
                                 ?subject ?predicate ?contact.
                             }
@@ -43,6 +51,7 @@ namespace COLID.ReportingService.Repositories.Implementation
             parametrizedString.SetPlainLiteral("fromResourceNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasResourcesGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("fromMetadataNamedGraph", _metadataGraphConfigurationRepository.GetGraphs(MetadataGraphConfiguration.HasMetadataGraph).JoinAsFromNamedGraphs());
             parametrizedString.SetPlainLiteral("technicalGroups", technicalGroups.JoinAsValuesList());
+            parametrizedString.SetPlainLiteral("httpServiceUrl", _httpserviceUrl + "kos/19014/Person");
 
             var results = _tripleStoreRepository.QueryTripleStoreResultSet(parametrizedString);
 

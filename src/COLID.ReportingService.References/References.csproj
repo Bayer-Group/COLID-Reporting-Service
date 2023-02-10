@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="COLID.Cache" Version="2.0.1064" />
+    <PackageReference Include="COLID.Cache" Version="2.0.1075" />
     <PackageReference Include="COLID.Common" Version="2.0.145" />
-    <PackageReference Include="COLID.Exception" Version="2.0.299" />
-    <PackageReference Include="COLID.Graph" Version="2.0.1064" />
+    <PackageReference Include="COLID.Exception" Version="2.0.1063" />
+    <PackageReference Include="COLID.Graph" Version="2.0.1075" />
     <PackageReference Include="COLID.Identity" Version="2.0.145" />
     <PackageReference Include="COLID.Swagger" Version="2.0.145" />
     <PackageReference Include="CorrelationId" Version="3.0.0" />
