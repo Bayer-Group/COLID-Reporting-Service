@@ -28,10 +28,10 @@
     <Rule Id="CA1027" Action="Error" />
     <Rule Id="CA1028" Action="Error" />
     <Rule Id="CA1030" Action="Error" />
-    <Rule Id="CA1031" Action="Error" />
+    <Rule Id="CA1031" Action="Warning" />
     <Rule Id="CA1032" Action="Error" />
     <Rule Id="CA1033" Action="Error" />
-    <Rule Id="CA1034" Action="Error" />
+    <Rule Id="CA1034" Action="Warning" />
     <Rule Id="CA1035" Action="Error" />
     <Rule Id="CA1036" Action="Error" />
     <Rule Id="CA1038" Action="Error" />
@@ -51,7 +51,7 @@
     <Rule Id="CA1053" Action="Error" />
     <Rule Id="CA1054" Action="Error" />
     <Rule Id="CA1055" Action="Error" />
-    <Rule Id="CA1056" Action="Error" />
+    <Rule Id="CA1056" Action="Warning" />
     <Rule Id="CA1057" Action="Error" />
     <Rule Id="CA1058" Action="Error" />
     <Rule Id="CA1059" Action="Error" />
@@ -671,6 +671,11 @@
     <Rule Id="C6993" Action="Error" />
     <Rule Id="C6995" Action="Error" />
     <Rule Id="C6997" Action="Error" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.NetAnalyzers" RuleNamespace="Microsoft.CodeAnalysis.NetAnalyzers">
+    <Rule Id="CA1031" Action="Warning" />
+    <Rule Id="CA1034" Action="Warning" />
+    <Rule Id="CA1056" Action="Warning" />
   </Rules>
   <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
     <Rule Id="CA1812" Action="Hidden" />

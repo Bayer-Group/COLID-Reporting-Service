@@ -2,7 +2,7 @@
 using COLID.Identity;
 using COLID.ReportingService.Services.Configuration;
 using COLID.ReportingService.Services.Implementation;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

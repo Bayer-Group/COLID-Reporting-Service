@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using COLID.Common.Logger;
 using COLID.Exception;
 using COLID.Identity;
@@ -43,7 +44,14 @@ namespace COLID.ReportingService.WebApi
 
             services.AddHealthChecks();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddHttpClient();
+            services.AddHttpClient("NoProxy").ConfigurePrimaryHttpMessageHandler(() =>
+            {
+                return new HttpClientHandler
+                {
+                    UseProxy = false,
+                    Proxy = null
+                };
+            });
 
             services
                 .AddControllers()

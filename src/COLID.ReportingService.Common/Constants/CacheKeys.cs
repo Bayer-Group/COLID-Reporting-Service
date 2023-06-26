@@ -36,9 +36,9 @@ namespace COLID.ReportingService.Common.Constants
                          .SetBasePath(_filePath)
                         .AddJsonFile("appsettings.json")
                         .Build();
-            public static readonly string _serviceUrl = _configuration.GetValue<string>("ServiceUrl");
-            public static readonly string COLIDResources = _serviceUrl + "kos/19050/444556";
-            public static readonly string CoreEntities = _serviceUrl + "kos/19050/444558";
+            public static readonly string ServiceUrl = _configuration.GetValue<string>("ServiceUrl");
+            public static readonly string COLIDResources = ServiceUrl + "kos/19050/444556";
+            public static readonly string CoreEntities = ServiceUrl + "kos/19050/444558";
         }
     }
 }

@@ -9,8 +9,8 @@ using COLID.Graph.Metadata.Constants;
 using COLID.Graph.Metadata.Services;
 using COLID.ReportingService.Common.Constants;
 using COLID.ReportingService.Common.DataModels;
-using COLID.ReportingService.Repositories.Interface;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
+using COLID.ReportingService.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace COLID.ReportingService.Services.Implementation
@@ -232,30 +232,30 @@ namespace COLID.ReportingService.Services.Implementation
         /// <summary> 
         /// Specifies the selection options for the given property key and their amount of uses. 
         /// </summary> 
-        /// <param name="property">Property key</param> 
+        /// <param name="predicate">Property key</param> 
         /// <returns></returns> 
-        public PropertyStatistics GetNumberOfControlledVocabularySelection(Uri property)
+        public PropertyStatistics GetNumberOfControlledVocabularySelection(Uri predicate)
         {
-            Guard.IsValidUri(property);
+            Guard.IsValidUri(predicate);
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
-            var numberOfControlledVocabulary = _cacheService.GetOrAdd($"numberOfControlledVocabulary:{property}",
-                  () => _resourceStatisticsRepository.GetNumberOfControlledVocabularySelection(property, types));
+            var numberOfControlledVocabulary = _cacheService.GetOrAdd($"numberOfControlledVocabulary:{predicate}",
+                  () => _resourceStatisticsRepository.GetNumberOfControlledVocabularySelection(predicate, types));
             return numberOfControlledVocabulary;
         }
 
         /// <summary> 
         /// Caches the selection options for the given property key and their amount of uses. 
-        /// <param name="property">Property key</param> 
+        /// <param name="prprty">Property key</param> 
         /// </summary> 
-        public async Task CacheNumberOfResourcesInRelationToNumberOfPropertyWords(Uri property)
+        public async Task CacheNumberOfResourcesInRelationToNumberOfPropertyWords(Uri prprty)
         {
-            _cacheService.Delete($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{property}", () => _resourceStatisticsRepository.GetPropertyValuesOfAllResources(property, null));
-            _cacheService.Delete($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{property}", () => _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(property));
+            _cacheService.Delete($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{prprty}", () => _resourceStatisticsRepository.GetPropertyValuesOfAllResources(prprty, null));
+            _cacheService.Delete($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{prprty}", () => _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(prprty));
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
-            var cachedTotalPropertyValue = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{property}", () =>
-                _resourceStatisticsRepository.GetPropertyValuesOfAllResources(property, types), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
-            var cachedTotalPropertyPredicates = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{property}", () =>
-                _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(property), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
+            var cachedTotalPropertyValue = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{prprty}", () =>
+                _resourceStatisticsRepository.GetPropertyValuesOfAllResources(prprty, types), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
+            var cachedTotalPropertyPredicates = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{prprty}", () =>
+                _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(prprty), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
             _logger.LogInformation("ResourceStatisticsService: Set CacheNumberOfResourcesInRelationToNumberOfPropertyWords.... ");
 
         }
@@ -263,28 +263,28 @@ namespace COLID.ReportingService.Services.Implementation
         /// <summary> 
         /// Returns the amount of words for a specific property from redis cache. 
         /// </summary> 
-        /// <param name="property">Property key</param> 
+        /// <param name="predicate">Property key</param> 
         /// <param name="increment">The increment indicates the steps in which the number is to be separated.</param> 
         /// <returns></returns> 
-        public PropertyStatistics GetNumberOfResourcesInRelationToNumberOfPropertyWords(Uri property, int increment)
+        public PropertyStatistics GetNumberOfResourcesInRelationToNumberOfPropertyWords(Uri predicate, int increment)
         {
-            Guard.IsValidUri(property);
+            Guard.IsValidUri(predicate);
             Guard.IsGreaterThanZero(increment);
 
-            if (_cacheService.Exists($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{property}", () => _resourceStatisticsRepository.GetPropertyValuesOfAllResources(property, null)) == false)
+            if (_cacheService.Exists($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{predicate}", () => _resourceStatisticsRepository.GetPropertyValuesOfAllResources(predicate, null)) == false)
             {
                 return new PropertyStatistics();
             }
-            if (_cacheService.Exists($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{property}", () => _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(property)) == false)
+            if (_cacheService.Exists($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{predicate}", () => _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(predicate)) == false)
             {
                 return new PropertyStatistics();
             }
             var types = _metadataService.GetInstantiableEntityTypes(Resource.Type.FirstResouceType);
-            var results = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{property}", () =>
-                _resourceStatisticsRepository.GetPropertyValuesOfAllResources(property, types), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
+            var results = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalPropertyValuesOfAllResources}:{predicate}", () =>
+                _resourceStatisticsRepository.GetPropertyValuesOfAllResources(predicate, types), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
             var countedResults = results.Item2.Select(t => WordCount(t)).ToList();
-            var total = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{property}", () =>
-                _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(property), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
+            var total = _cacheService.GetOrAdd($"{CacheKeys.Statistics.TotalNumberOfResourcesByPredicate}:{predicate}", () =>
+                _resourceStatisticsRepository.GetTotalNumberOfResourcesByPredicate(predicate), TimeSpan.FromSeconds(defaultExpirationTime_4hours));
 
             return new PropertyStatistics(results.Item1, increment, CreateIncrementResultOfList(countedResults, increment, total));                        
         }
@@ -455,7 +455,7 @@ namespace COLID.ReportingService.Services.Implementation
         /// <param name="results"></param> 
         /// <param name="increment">Indicates the size of the area.</param> 
         /// <returns></returns> 
-        private IList<PropertyStatisticItem> CreateIncrementResultOfList(IList<int> results, int increment, string total = null)
+        private static IList<PropertyStatisticItem> CreateIncrementResultOfList(IList<int> results, int increment, string total = null)
         {
             var incrementedResults = new Dictionary<int, int>();
 
@@ -486,7 +486,7 @@ namespace COLID.ReportingService.Services.Implementation
         /// </summary> 
         /// <param name="txtToCount">Text to be analyzed.</param> 
         /// <returns>Amount of words</returns> 
-        private int WordCount(string txtToCount)
+        private static int WordCount(string txtToCount)
         {
             string pattern = @"\w+";
             Regex regex = new Regex(pattern);
@@ -496,7 +496,7 @@ namespace COLID.ReportingService.Services.Implementation
             return CountedWords;
         }
 
-        private string GenerateCacheKey(string cacheKey)
+        private static string GenerateCacheKey(string cacheKey)
         {
             return $"{CacheKeys.CallingClass.ResourceStatisticsService}:{cacheKey}";
              

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Mime;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

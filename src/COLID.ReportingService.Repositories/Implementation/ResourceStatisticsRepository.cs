@@ -5,7 +5,7 @@ using COLID.Graph.Metadata.Constants;
 using COLID.Graph.Metadata.Repositories;
 using COLID.Graph.TripleStore.Extensions;
 using COLID.ReportingService.Common.DataModels;
-using COLID.ReportingService.Repositories.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
 using VDS.RDF.Query;
 using COLID.Graph.TripleStore.Repositories;
 
@@ -366,7 +366,7 @@ namespace COLID.ReportingService.Repositories.Implementation
             return characteristics;
         }
 
-        private int ParseStringToInt(string str)
+        private static int ParseStringToInt(string str)
         {
             return int.TryParse(str, out var num) ? num : 0;
         }

@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using COLID.ReportingService.Common.DataModels;
 
-namespace COLID.ReportingService.Services.Interface
+namespace COLID.ReportingService.Services.Interfaces
 {
     public interface IContactService
     {

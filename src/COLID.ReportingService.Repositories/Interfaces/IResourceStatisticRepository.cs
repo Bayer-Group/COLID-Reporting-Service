@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using COLID.ReportingService.Common.DataModels;
 
-namespace COLID.ReportingService.Repositories.Interface
+namespace COLID.ReportingService.Repositories.Interfaces
 {
     /// <summary>
     /// Repository to handle all resource statistic related operations.

@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using COLID.ReportingService.Repositories.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
 using COLID.ReportingService.Services.Implementation;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Services.Interfaces;
 using Moq;
 using Xunit;
 using COLID.ReportingService.Common.DataModels;
 using COLID.ReportingService.UnitTests.Builder;
-using COLID.Graph.Metadata.Services;
-
+using COLID.Graph.Metadata.Services; 
+using COLID.Cache.Services; 
+using Castle.Core.Logging; 
+using Microsoft.Extensions.Logging; 
+ 
 namespace COLID.ReportingService.UnitTests.Services
 {
     public class ResourceStatisticsServiceTests
     {
         private readonly IResourceStatisticsService _statisticsService;
         private readonly Mock<IResourceStatisticsRepository> _mockStatisticsRepository;
-        private readonly Mock<IMetadataService> _mockMetadataService;
+        private readonly Mock<IMetadataService> _mockMetadataService; 
+        private readonly Mock<ICacheService> _mockCacheService; 
+        private readonly Mock<ILogger<ResourceStatisticsService>> _mockLoggerService;
 
         private readonly PropertyStatistics _numberOfProperties;
         private readonly PropertyStatistics _propertyUsageByGroup;
@@ -25,9 +30,11 @@ namespace COLID.ReportingService.UnitTests.Services
         {
             _mockStatisticsRepository = new Mock<IResourceStatisticsRepository>();
             _mockMetadataService = new Mock<IMetadataService>();
+            _mockCacheService = new Mock<ICacheService>();
+            _mockLoggerService = new Mock<ILogger<ResourceStatisticsService>>();
 
             // Init testdata
-            _statisticsService = new ResourceStatisticsService(_mockStatisticsRepository.Object, _mockMetadataService.Object);
+            _statisticsService = new ResourceStatisticsService(_mockStatisticsRepository.Object, _mockMetadataService.Object, _mockCacheService.Object, _mockLoggerService.Object);
             
             _numberOfProperties = new PropertyStatisticsBuilder().GenerateSampleCountOfPropertiesData().Build();
             _propertyUsageByGroup = new PropertyStatisticsBuilder().GenerateSamplePropertyUsageByGroupData().Build();
@@ -254,20 +261,20 @@ namespace COLID.ReportingService.UnitTests.Services
             // Assert
             _mockStatisticsRepository.Verify(x => x.GetInformationClassificationCharacteristics(It.IsAny<IList<string>>()), Times.Once);
             Assert.Equal(characteristics.Count, result.Count);
-        }
-        [Fact]
-        public void GetLifecycleStatusCharacteristics_Should_ReturnLifecycleStatusCharacteristics()
-        {
-            // Arrange
-            var characteristics = new PropertyCharacteristicListBuilder().GenerateLifecycleStatusCharacteristics().Build();
-            _mockStatisticsRepository.Setup(s => s.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>())).Returns(characteristics);
-
-            // Act
-            var result = _statisticsService.GetLifecycleStatusCharacteristics();
-
-            // Assert
-            _mockStatisticsRepository.Verify(x => x.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>()), Times.Once);
-            Assert.Equal(characteristics.Count, result.Count);
+        } 
+        [Fact] 
+        public void GetLifecycleStatusCharacteristics_Should_ReturnLifecycleStatusCharacteristics() 
+        { 
+            // Arrange 
+            var characteristics = new PropertyCharacteristicListBuilder().GenerateLifecycleStatusCharacteristics().Build(); 
+            _mockStatisticsRepository.Setup(s => s.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>())).Returns(characteristics); 
+ 
+            // Act 
+            var result = _statisticsService.GetLifecycleStatusCharacteristics(); 
+ 
+            // Assert 
+            _mockStatisticsRepository.Verify(x => x.GetLifecycleStatusCharacteristics(It.IsAny<IList<string>>()), Times.Once); 
+            Assert.Equal(characteristics.Count, result.Count); 
         }
 
         #region Helper

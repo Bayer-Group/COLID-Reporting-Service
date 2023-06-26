@@ -6,7 +6,7 @@ using COLID.Graph.TripleStore.DataModels.ConsumerGroups;
 using COLID.Identity.Extensions;
 using COLID.Identity.Services;
 using COLID.ReportingService.Services.Configuration;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Services.Interfaces;
 using CorrelationId.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +21,7 @@ namespace COLID.ReportingService.Services.Implementation
         private readonly IHttpClientFactory _clientFactory;
         private readonly IConfiguration _configuration;
         private readonly ITokenService<ColidRegistrationServiceTokenOptions> _tokenService;
-
+        private readonly bool _bypassProxy;
         private readonly string RegistrationServiceConsumerGroupApi;
 
         public RemoteRegistrationService(
@@ -36,20 +36,20 @@ namespace COLID.ReportingService.Services.Implementation
             _tokenService = tokenService;
             _correlationContextAccessor = correlationContextAccessor;
             _cancellationToken = httpContextAccessor?.HttpContext?.RequestAborted ?? CancellationToken.None;
-
+            _bypassProxy = _configuration.GetValue<bool>("BypassProxy");
             var serverUrl = _configuration.GetConnectionString("ColidRegistrationServiceUrl");
             RegistrationServiceConsumerGroupApi = $"{serverUrl}/consumerGroup";
         }
 
         public async Task<IEnumerable<ConsumerGroupResultDTO>> GetConsumerGroups()
         {
-            using (var httpClient = _clientFactory.CreateClient())
+            using (var httpClient = (_bypassProxy ? _clientFactory.CreateClient("NoProxy") : _clientFactory.CreateClient()))
             {
                 var response = await AquireTokenAndSendToRegistrationService(httpClient, HttpMethod.Get, $"{RegistrationServiceConsumerGroupApi}List/active", null);
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new System.Exception("Something went wrong while fetching consumer groups in RegistrationService");
+                    throw new System.InvalidOperationException("Something went wrong while fetching consumer groups in RegistrationService");
                 }
 
                 var content = await response.Content.ReadAsStringAsync();

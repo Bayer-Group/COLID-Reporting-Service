@@ -1,7 +1,7 @@
 ﻿using System;
 using COLID.Graph;
 using COLID.ReportingService.Repositories.Implementation;
-using COLID.ReportingService.Repositories.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

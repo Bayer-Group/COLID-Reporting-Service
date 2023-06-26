@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using COLID.ReportingService.Common.DataModels;
 
-namespace COLID.ReportingService.Services.Interface
+namespace COLID.ReportingService.Services.Interfaces
 {
     public interface IResourceStatisticsService
     {
@@ -86,7 +86,7 @@ namespace COLID.ReportingService.Services.Interface
         /// <summary>
         /// Caches the selection options for the given property key and their amount of uses.
         /// </summary>
-        Task CacheNumberOfResourcesInRelationToNumberOfPropertyWords(Uri property);
+        Task CacheNumberOfResourcesInRelationToNumberOfPropertyWords(Uri prprty);
 
         /// <summary>
         /// Caches the resources version information.

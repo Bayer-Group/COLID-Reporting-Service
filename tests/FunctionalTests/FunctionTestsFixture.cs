@@ -5,7 +5,7 @@ using COLID.Graph.TripleStore.Repositories;
 using COLID.ReportingService.FunctionalTests.Setup;
 using COLID.ReportingService.Repositories;
 using COLID.ReportingService.Services;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Services.Interfaces;
 using COLID.ReportingService.WebApi;
 using COLID.ReportingService.WebApi.Settings;
 using Microsoft.AspNetCore.Hosting;

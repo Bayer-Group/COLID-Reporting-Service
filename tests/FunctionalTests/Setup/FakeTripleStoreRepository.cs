@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using COLID.Graph.TripleStore.Repositories;
-using COLID.Graph.TripleStore.Transactions;
+using COLID.Graph.TripleStore.Repositories; 
+using COLID.Graph.TripleStore.Transactions; 
+using Microsoft.Extensions.Logging; 
+using Moq; 
 using VDS.RDF;
 using VDS.RDF.Parsing;
 using VDS.RDF.Query;
@@ -19,10 +21,13 @@ namespace COLID.ReportingService.FunctionalTests.Setup
 
         private ITripleStoreTransaction _transaction;
 
+        private readonly Mock<ILogger<TripleStoreTransaction>> _mockLogger; 
+
         public FakeTripleStoreRepository(Dictionary<string, string> graphs)
         {
             _store = CreateNewTripleStore(graphs);
             _dataset = new InMemoryDataset(_store);
+            _mockLogger = new Mock<ILogger<TripleStoreTransaction>>();
         }
 
         public SparqlResultSet QueryTripleStoreResultSet(SparqlParameterizedString parameterizedString)
@@ -154,7 +159,7 @@ namespace COLID.ReportingService.FunctionalTests.Setup
 
         public ITripleStoreTransaction CreateTransaction()
         {
-            _transaction = new TripleStoreTransaction(this);
+            _transaction = new TripleStoreTransaction(this, _mockLogger.Object);
             return _transaction;
         }
 

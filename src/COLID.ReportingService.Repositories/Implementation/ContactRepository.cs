@@ -7,7 +7,7 @@ using COLID.Graph.Metadata.Repositories;
 using COLID.Graph.TripleStore.Extensions;
 using COLID.Graph.TripleStore.Repositories;
 using COLID.ReportingService.Common.DataModels;
-using COLID.ReportingService.Repositories.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using VDS.RDF.Query;
 
@@ -23,7 +23,7 @@ namespace COLID.ReportingService.Repositories.Implementation
                          .SetBasePath(_filePath)
                         .AddJsonFile("appsettings.json")
                         .Build();
-        public static readonly string _httpserviceUrl = _configuration.GetValue<string>("HttpServiceUrl");
+        private static readonly string _httpserviceUrl = _configuration.GetValue<string>("HttpServiceUrl");
         public ContactRepository(ITripleStoreRepository tripleStoreRepository, IMetadataGraphConfigurationRepository metadataGraphConfigurationRepository)
         {
             _tripleStoreRepository = tripleStoreRepository;

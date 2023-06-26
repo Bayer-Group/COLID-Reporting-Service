@@ -6,8 +6,8 @@ using COLID.Common.Utilities;
 using COLID.Graph.Metadata.Constants;
 using COLID.Graph.Metadata.Services;
 using COLID.ReportingService.Common.DataModels;
-using COLID.ReportingService.Repositories.Interface;
-using COLID.ReportingService.Services.Interface;
+using COLID.ReportingService.Repositories.Interfaces;
+using COLID.ReportingService.Services.Interfaces;
 
 namespace COLID.ReportingService.Services.Implementation
 {
