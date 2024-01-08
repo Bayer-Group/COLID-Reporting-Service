@@ -1,24 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="COLID.Cache" Version="2.0.1076" />
-    <PackageReference Include="COLID.Common" Version="2.0.145" />
-    <PackageReference Include="COLID.Exception" Version="2.0.1063" />
-    <PackageReference Include="COLID.Graph" Version="2.0.1076" />
-    <PackageReference Include="COLID.Identity" Version="2.0.145" />
-    <PackageReference Include="COLID.Swagger" Version="2.0.145" />
-    <PackageReference Include="CorrelationId" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.2.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="COLID.Cache" Version="2.0.1079" />
+    <PackageReference Include="COLID.Common" Version="2.0.149" />
+    <PackageReference Include="COLID.Exception" Version="2.0.1067" />
+    <PackageReference Include="COLID.Graph" Version="2.0.1079" />
+    <PackageReference Include="COLID.Identity" Version="2.0.1066" />
+    <PackageReference Include="COLID.Swagger" Version="2.0.148" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="6.0.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.20" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>

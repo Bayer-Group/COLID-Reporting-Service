@@ -7,7 +7,6 @@ using COLID.Identity.Extensions;
 using COLID.Identity.Services;
 using COLID.ReportingService.Services.Configuration;
 using COLID.ReportingService.Services.Interfaces;
-using CorrelationId.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -17,7 +16,6 @@ namespace COLID.ReportingService.Services.Implementation
     public class RemoteRegistrationService: IRemoteRegistrationService
     {
         private readonly CancellationToken _cancellationToken;
-        private readonly ICorrelationContextAccessor _correlationContextAccessor;
         private readonly IHttpClientFactory _clientFactory;
         private readonly IConfiguration _configuration;
         private readonly ITokenService<ColidRegistrationServiceTokenOptions> _tokenService;
@@ -28,13 +26,11 @@ namespace COLID.ReportingService.Services.Implementation
             IHttpClientFactory clientFactory,
             IConfiguration configuration,
             IHttpContextAccessor httpContextAccessor,
-            ICorrelationContextAccessor correlationContextAccessor,
             ITokenService<ColidRegistrationServiceTokenOptions> tokenService)
         {
             _clientFactory = clientFactory;
             _configuration = configuration;
             _tokenService = tokenService;
-            _correlationContextAccessor = correlationContextAccessor;
             _cancellationToken = httpContextAccessor?.HttpContext?.RequestAborted ?? CancellationToken.None;
             _bypassProxy = _configuration.GetValue<bool>("BypassProxy");
             var serverUrl = _configuration.GetConnectionString("ColidRegistrationServiceUrl");
@@ -63,7 +59,7 @@ namespace COLID.ReportingService.Services.Implementation
         {
             var accessToken = await _tokenService.GetAccessTokenForWebApiAsync();
             var response = await httpClient.SendRequestWithOptionsAsync(httpMethod, endpointUrl,
-                requestBody, accessToken, _cancellationToken, _correlationContextAccessor.CorrelationContext);
+                requestBody, accessToken, _cancellationToken);
             return response;
         }
     }
